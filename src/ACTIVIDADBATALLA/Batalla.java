@@ -5,16 +5,12 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class Batalla {
-    ArrayList<Personaje> heroes;
-    ArrayList<Personaje> villanos;
-    Scanner sc;
-    Random rand;
+    ArrayList<Personaje> heroes=new ArrayList();
+    ArrayList<Personaje> villanos=new ArrayList<>();
+    Scanner sc=new Scanner(System.in);
+    Random rand=new Random();
 
     public Batalla() {
-        sc=new Scanner(System.in);
-        heroes = new ArrayList<>();
-        villanos = new ArrayList<>();
-        this.rand=new Random();
     }
 
     public void MostrarMenu() {
