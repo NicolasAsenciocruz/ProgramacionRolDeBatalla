@@ -50,7 +50,6 @@ public class Personaje {
         }
 
     }
-
     public boolean estaVivo() {
         return this.vida > 0;
     }

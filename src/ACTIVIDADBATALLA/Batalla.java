@@ -94,16 +94,17 @@ public class Batalla {
 
 
     public void iniciarBatalla() {
+        //Si la lista de heroes esta vacia o la de villanos, entonces no puede iniciar la batalla aun
         if (this.heroes.isEmpty() || this.villanos.isEmpty()) {
             System.out.println("No se puede iniciar la batalla, debes tener heroes y villanos para luchar");
             return;
         }
-
         System.out.println("========COMIENZO DE LA BATALLA========");
+        //Minetras la lista de heroes no este vacia o la de villanos, entonces agarra uno aleatorio de cada lista
         while (!heroes.isEmpty() && !villanos.isEmpty()) {
             Personaje h = heroes.get(rand.nextInt(heroes.size()));
             Personaje v = villanos.get(rand.nextInt(villanos.size()));
-
+        //Ahora enfrentalos
             System.out.println("===============COMBATE================");
             System.out.println("============ENFRENTAMIENTO============");
             System.out.println("heroe: " + h);
@@ -117,28 +118,32 @@ public class Batalla {
             if (v.estaVivo()) {
                 v.atacar(h);
             }
-
+            //Despues del ataque imprime la vida que les queda a cada uno
             System.out.println("===ATAQUES CONCLUIDOS===");
             System.out.println("Heroe: " + h.getVida() + " vida");
             System.out.println("Villano: " + v.getVida() + " vida");
 
             // COMPROBAMOS MUERTES
+            //Si el heroe no esta vivo entonces remuevelo de la lista
             if (!h.estaVivo()) {
                 System.out.println("Tu heroe ha sido derrotado");
                 this.heroes.remove(h);
             }
+            //Si el villano no esta vivo entonces remuevelo de la lista
             if (!v.estaVivo()) {
                 System.out.println("El villano ha sido derrotado");
                 this.villanos.remove(v);
             }
-
+            //Muestra las listas para saber quienes quedaron vivos
             System.out.println();
             this.muestraListas();
         }
 
         // ANUNCIAR GANADOR
+        //Si la lista de heroes esta vacia entonces los villanos han ganado
         if (this.heroes.isEmpty()) {
             System.out.println("LOS VILLANOS HAN GANADO LA BATALLA");
+            //Sino si, la lista de los villanos esta vacia entonces los heroes han ganado
         } else if (this.villanos.isEmpty()) {
             System.out.println("LOS HEROES HAN GANADO LA BATALLA!");
         }
