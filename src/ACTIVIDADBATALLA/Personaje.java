@@ -1,5 +1,8 @@
 package ACTIVIDADBATALLA;
 
+/**
+ * Clase personaje
+ */
 public class Personaje {
     private String nombre;
     private int vida;

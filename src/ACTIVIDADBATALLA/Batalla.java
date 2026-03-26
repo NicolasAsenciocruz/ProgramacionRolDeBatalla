@@ -4,6 +4,9 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+/**
+ * Clase batalla que define la funcionalidad
+ */
 public class Batalla {
     ArrayList<Personaje> heroes=new ArrayList();
     ArrayList<Personaje> villanos=new ArrayList<>();
